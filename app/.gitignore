@@ -9,6 +9,7 @@ gradlew
 gradlew.bat
 settings.gradle.kts
 *.class
+Makefile
 
 ### IntelliJ IDEA ###
 /.idea
