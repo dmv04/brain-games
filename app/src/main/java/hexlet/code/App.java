@@ -8,6 +8,7 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner scanner = new Scanner(System.in);
@@ -23,7 +24,13 @@ public class App {
             case 3:
                 Calc.game();
                 break;
+            case 4:
+                GCD.game();
+                break;
             case 0:
+                break;
+            default:
+                System.out.println("Wrong symbol");
         }
     }
 }
