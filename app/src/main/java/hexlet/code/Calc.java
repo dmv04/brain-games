@@ -16,16 +16,16 @@ public class Calc {
         if (answer.equals(String.valueOf(randomNumber1 * randomNumber2))) {
             counter++;
             System.out.println("Correct!");
-            int randomNumber3 =  (int) (Math.random() * 100);
-            int randomNumber4 =  (int) (Math.random() * 100);
+            int randomNumber3 = (int) (Math.random() * 100);
+            int randomNumber4 = (int) (Math.random() * 100);
             System.out.println("Question: " + randomNumber3 + " + " + randomNumber4);
             System.out.print("Your answer: ");
             answer = scanner.next();
             if (answer.equals(String.valueOf(randomNumber3 + randomNumber4))) {
                 counter++;
                 System.out.println("Correct!");
-                int randomNumber5 =  (int) (Math.random() * 100);
-                int randomNumber6 =  (int) (Math.random() * 100);
+                int randomNumber5 = (int) (Math.random() * 100);
+                int randomNumber6 = (int) (Math.random() * 100);
                 System.out.println("Question: " + randomNumber5 + " - " + randomNumber6);
                 System.out.print("Your answer: ");
                 answer = scanner.next();
