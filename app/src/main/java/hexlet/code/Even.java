@@ -20,13 +20,11 @@ public class Even {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 System.out.println("Let's try again, " + Cli.userName);
                 break;
-            }
-            else if (answer.equals("no") && randomNumber % 2 == 0) {
+            } else if (answer.equals("no") && randomNumber % 2 == 0) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
                 System.out.println("Let's try again, " + Cli.userName);
                 break;
-            }
-            else {
+            } else {
                 System.out.println("Wrong symbol");
                 break;
             }
