@@ -96,7 +96,7 @@ public class Utils {
 
     public static void wrongAnswer(Object wrongAnswer, Object correctAnswer, String userName) {
         System.out.println(wrongAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
-        System.out.println("Let's try again, " + userName);
+        System.out.println("Let's try again, " + userName + "!");
     }
 
 }
