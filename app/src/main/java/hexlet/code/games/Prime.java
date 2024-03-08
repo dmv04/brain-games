@@ -17,10 +17,13 @@ public class Prime {
                 System.out.println("Correct!");
             } else if (Utils.isPrime(randomNumber) && answer.equals("no")) {
                 Utils.wrongAnswer(answer, "yes", userName);
+                break;
             } else if (!Utils.isPrime(randomNumber) && answer.equals("yes")) {
                 Utils.wrongAnswer(answer, "no", userName);
+                break;
             } else {
                 System.out.println("Wrong symbol");
+                break;
             }
         }
         if (Utils.counter == 3) {
