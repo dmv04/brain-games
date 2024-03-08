@@ -20,6 +20,7 @@ public class Calc {
                 System.out.println("Correct!");
             } else {
                 Utils.wrongAnswer(answer, randomData[1], userName);
+                break;
             }
         }
         if (Utils.counter == 3) {
