@@ -1,17 +1,25 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+
+import hexlet.code.games.Even;
+
+import hexlet.code.games.GreatestCommonDivisor;
+
+import hexlet.code.games.Prime;
+
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
 public class App {
-    private final static int CLI = 1;
-    private final static int EVEN = 2;
-    private final static int CALC = 3;
-    private final static int GCD = 4;
-    private final static int PROGRESSION = 5;
-    private final static int PRIME = 6;
-    private final static int EXIT = 0;
+    private static final int CLI = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+    private static final int EXIT = 0;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");

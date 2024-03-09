@@ -11,7 +11,7 @@ public class Progression {
         String userName = Utils.greetings();
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Utils.stepsToWin; i++) {
+        for (int i = 0; i < Utils.STEPS_TO_WIN; i++) {
             String[] currentProgression = Utils.createProgression();
             int hiddenElementPosition = Utils.generateRandomNumber(0, currentProgression.length);
             String answer = currentProgression[hiddenElementPosition];
@@ -26,7 +26,7 @@ public class Progression {
                 break;
             }
         }
-        if (Utils.getCounter() == Utils.stepsToWin) {
+        if (Utils.getCounter() == Utils.STEPS_TO_WIN) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

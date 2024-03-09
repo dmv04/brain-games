@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class Utils {
     private static int counter = 0;
-    public static final int stepsToWin = 3;
-    public static final int maxProgressionValue = 10;
-    public static final int firstElementRange = 10;
-    public static final int randomNumberMaxRange = 100;
+    public static final int STEPS_TO_WIN = 3;
+    public static final int MAX_PROGRESSION_VALUE = 10;
+    public static final int FIRST_ELEMENT_RANGE = 10;
+    public static final int RANDOM_NUMBER_MAX_RANGE = 100;
 
     public static int getCounter() {
         return counter;
     }
 
-    public static void setCounter(int counter) {
-        Utils.counter = counter;
+    public static void setCounter(int counter1) {
+        Utils.counter = counter1;
     }
 
     public static int generateRandomNumber(int min, int max) {
@@ -34,9 +34,9 @@ public class Utils {
     }
 
     public static String[] createProgression() {
-        String[] progression = new String[maxProgressionValue];
-        progression[0] = String.valueOf((int) (Math.random() * firstElementRange));
-        int progressionStep = (int) (Math.random() * (maxProgressionValue - 1) + 1);
+        String[] progression = new String[MAX_PROGRESSION_VALUE];
+        progression[0] = String.valueOf((int) (Math.random() * FIRST_ELEMENT_RANGE));
+        int progressionStep = (int) (Math.random() * (MAX_PROGRESSION_VALUE - 1) + 1);
         for (int i = 1; i < progression.length; i++) {
             progression[i] = String.valueOf(Integer.parseInt(progression[i - 1]) + progressionStep);
         }

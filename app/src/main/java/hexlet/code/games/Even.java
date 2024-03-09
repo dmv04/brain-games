@@ -10,8 +10,8 @@ public class Even {
         String userName = Utils.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Utils.stepsToWin; i++) {
-            int randomNumber = Utils.generateRandomNumber(0, Utils.randomNumberMaxRange);
+        for (int i = 0; i < Utils.STEPS_TO_WIN; i++) {
+            int randomNumber = Utils.generateRandomNumber(0, Utils.RANDOM_NUMBER_MAX_RANGE);
             Utils.qaText(randomNumber);
             String answer = scanner.next();
             if ((answer.equals("yes") && randomNumber % 2 == 0) || (answer.equals("no") && randomNumber % 2 == 1)) {
@@ -28,7 +28,7 @@ public class Even {
                 break;
             }
         }
-        if (Utils.getCounter() == Utils.stepsToWin) {
+        if (Utils.getCounter() == Utils.STEPS_TO_WIN) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
