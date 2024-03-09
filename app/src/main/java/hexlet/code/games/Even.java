@@ -1,19 +1,21 @@
 package hexlet.code.games;
 
 import hexlet.code.Utils;
+
 import java.util.Scanner;
+
 
 public class Even {
     public static void game() {
         String userName = Utils.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = Utils.generateRandomNumber(0, 100);
+        for (int i = 0; i < Utils.stepsToWin; i++) {
+            int randomNumber = Utils.generateRandomNumber(0, Utils.randomNumberMaxRange);
             Utils.qaText(randomNumber);
             String answer = scanner.next();
             if ((answer.equals("yes") && randomNumber % 2 == 0) || (answer.equals("no") && randomNumber % 2 == 1)) {
-                Utils.counter++;
+                Utils.setCounter(Utils.getCounter() + 1);
                 System.out.println("Correct!");
             } else if (answer.equals("yes") && randomNumber % 2 == 1) {
                 Utils.wrongAnswer("yes", "no", userName);
@@ -26,7 +28,7 @@ public class Even {
                 break;
             }
         }
-        if (Utils.counter == 3) {
+        if (Utils.getCounter() == Utils.stepsToWin) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

@@ -3,7 +3,19 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Utils {
-    public static int counter = 0;
+    private static int counter = 0;
+    public static final int stepsToWin = 3;
+    public static final int maxProgressionValue = 10;
+    public static final int firstElementRange = 10;
+    public static final int randomNumberMaxRange = 100;
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Utils.counter = counter;
+    }
 
     public static int generateRandomNumber(int min, int max) {
         return (int) (Math.random() * max + min);
@@ -22,10 +34,10 @@ public class Utils {
     }
 
     public static String[] createProgression() {
-        String[] progression = new String[10];
-        progression[0] = String.valueOf((int) (Math.random() * 10));
-        int progressionStep = (int) (Math.random() * 9 + 1);
-        for (int i = 1; i < 10; i++) {
+        String[] progression = new String[maxProgressionValue];
+        progression[0] = String.valueOf((int) (Math.random() * firstElementRange));
+        int progressionStep = (int) (Math.random() * (maxProgressionValue - 1) + 1);
+        for (int i = 1; i < progression.length; i++) {
             progression[i] = String.valueOf(Integer.parseInt(progression[i - 1]) + progressionStep);
         }
         return progression;
@@ -67,6 +79,8 @@ public class Utils {
                 question = number1 + " * " + number2;
                 answer = Integer.toString(calculate('*', number1, number2));
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + number);
         }
         return new String[]{question, answer};
     }

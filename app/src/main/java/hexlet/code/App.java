@@ -1,10 +1,18 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    private final static int CLI = 1;
+    private final static int EVEN = 2;
+    private final static int CALC = 3;
+    private final static int GCD = 4;
+    private final static int PROGRESSION = 5;
+    private final static int PRIME = 6;
+    private final static int EXIT = 0;
+    private static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -18,25 +26,25 @@ public class App {
         int number = scanner.nextInt();
         System.out.println("Welcome to the Brain Games!");
         switch (number) {
-            case 1:
+            case CLI:
                 Cli.nameSetter();
                 break;
-            case 2:
+            case EVEN:
                 Even.game();
                 break;
-            case 3:
+            case CALC:
                 Calc.game();
                 break;
-            case 4:
-                GCD.game();
+            case GCD:
+                GreatestCommonDivisor.game();
                 break;
-            case 5:
+            case PROGRESSION:
                 Progression.game();
                 break;
-            case 6:
+            case PRIME:
                 Prime.game();
                 break;
-            case 0:
+            case EXIT:
                 break;
             default:
                 System.out.println("Wrong symbol");
