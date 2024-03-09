@@ -13,7 +13,7 @@ public class Progression {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < Utils.stepsToWin; i++) {
             String[] currentProgression = Utils.createProgression();
-            int hiddenElementPosition = Utils.generateRandomNumber(0, Utils.randomNumberMaxRange);
+            int hiddenElementPosition = Utils.generateRandomNumber(0, currentProgression.length);
             String answer = currentProgression[hiddenElementPosition];
             currentProgression[hiddenElementPosition] = "..";
             Utils.qaText(Utils.printArray(currentProgression));
