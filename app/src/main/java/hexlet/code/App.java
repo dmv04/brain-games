@@ -12,7 +12,7 @@ public class App {
     private final static int PROGRESSION = 5;
     private final static int PRIME = 6;
     private final static int EXIT = 0;
-    private static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
