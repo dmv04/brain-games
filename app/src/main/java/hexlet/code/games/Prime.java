@@ -9,7 +9,8 @@ public class Prime {
     public static void game() {
         String[][] questions = new String[Engine.STEPS_TO_WIN][2];
         for (String[] question : questions) {
-            int randomNumber = Utils.generateRandomNumber(Utils.RANDOM_NUMBER_MIN_RANGE + 1, Utils.RANDOM_NUMBER_MAX_RANGE);
+            int randomNumber =
+                    Utils.generateRandomNumber(Utils.RANDOM_NUMBER_MIN_RANGE + 1, Utils.RANDOM_NUMBER_MAX_RANGE);
             question[0] = Integer.valueOf(randomNumber).toString();
             question[1] = Utils.isPrime(randomNumber) ? "yes" : "no";
         }
