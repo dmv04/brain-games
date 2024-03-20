@@ -1,34 +1,20 @@
 package hexlet.code.games;
 
 import hexlet.code.Utils;
-
-import java.util.Scanner;
-
-
+import hexlet.code.Engine;
 public class Progression {
-
+    private static final String DESCRIPTION = "What number is missing in the progression?";
     public static void game() {
-        String userName = Utils.greetings();
-        System.out.println("What number is missing in the progression?");
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Utils.STEPS_TO_WIN; i++) {
+        String[][] questions = new String[Engine.STEPS_TO_WIN][2];
+        for (String[] question : questions) {
             String[] currentProgression = Utils.createProgression();
             int hiddenElementPosition = Utils.generateRandomNumber(0, currentProgression.length);
-            String answer = currentProgression[hiddenElementPosition];
+            question[1] = currentProgression[hiddenElementPosition];
             currentProgression[hiddenElementPosition] = "..";
-            Utils.qaText(Utils.printArray(currentProgression));
-            String userAnswer = scanner.next();
-            if (userAnswer.equals(answer)) {
-                System.out.println("Correct!");
-                Utils.setCounter(Utils.getCounter() + 1);
-            } else {
-                Utils.wrongAnswer(userAnswer, answer, userName);
-                break;
-            }
+            question[0] = Utils.printArray(currentProgression);
         }
-        if (Utils.getCounter() == Utils.STEPS_TO_WIN) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Engine.runGame(questions, DESCRIPTION);
+
     }
 
 }

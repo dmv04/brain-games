@@ -20,6 +20,7 @@ public class App {
     private static final int PROGRESSION = 5;
     private static final int PRIME = 6;
     private static final int EXIT = 0;
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -32,7 +33,6 @@ public class App {
         System.out.print("Your choice: ");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
-        System.out.println("Welcome to the Brain Games!");
         switch (number) {
             case CLI:
                 Cli.nameSetter();
@@ -56,6 +56,7 @@ public class App {
                 break;
             default:
                 System.out.println("Wrong symbol");
+                break;
         }
     }
 }

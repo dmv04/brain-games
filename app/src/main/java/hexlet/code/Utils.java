@@ -1,21 +1,10 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
 public class Utils {
-    private static int counter = 0;
-    public static final int STEPS_TO_WIN = 3;
     public static final int MAX_PROGRESSION_VALUE = 10;
     public static final int FIRST_ELEMENT_RANGE = 10;
+    public static final int RANDOM_NUMBER_MIN_RANGE = 0;
     public static final int RANDOM_NUMBER_MAX_RANGE = 100;
-
-    public static int getCounter() {
-        return counter;
-    }
-
-    public static void setCounter(int counter1) {
-        Utils.counter = counter1;
-    }
 
     public static int generateRandomNumber(int min, int max) {
         return (int) (Math.random() * max + min);
@@ -94,23 +83,4 @@ public class Utils {
             return number1 * number2;
         }
     }
-
-    public static String greetings() {
-        System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        return userName;
-    }
-
-    public static void qaText(Object obj) {
-        System.out.println("Question: " + obj);
-        System.out.print("Your answer: ");
-    }
-
-    public static void wrongAnswer(Object wrongAnswer, Object correctAnswer, String userName) {
-        System.out.println(wrongAnswer + " is wrong answer ;(. Correct answer was " + correctAnswer + ".");
-        System.out.println("Let's try again, " + userName + "!");
-    }
-
 }

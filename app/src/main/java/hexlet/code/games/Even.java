@@ -1,35 +1,20 @@
 package hexlet.code.games;
 
 import hexlet.code.Utils;
-
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 
 public class Even {
+    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
     public static void game() {
-        String userName = Utils.greetings();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < Utils.STEPS_TO_WIN; i++) {
-            int randomNumber = Utils.generateRandomNumber(0, Utils.RANDOM_NUMBER_MAX_RANGE);
-            Utils.qaText(randomNumber);
-            String answer = scanner.next();
-            if ((answer.equals("yes") && randomNumber % 2 == 0) || (answer.equals("no") && randomNumber % 2 == 1)) {
-                Utils.setCounter(Utils.getCounter() + 1);
-                System.out.println("Correct!");
-            } else if (answer.equals("yes") && randomNumber % 2 == 1) {
-                Utils.wrongAnswer("yes", "no", userName);
-                break;
-            } else if (answer.equals("no") && randomNumber % 2 == 0) {
-                Utils.wrongAnswer("no", "yes", userName);
-                break;
-            } else {
-                System.out.println("Wrong symbol");
-                break;
-            }
+        String[][] questions = new String[Engine.STEPS_TO_WIN][2];
+        for (String[] question : questions) {
+            int number = Utils.generateRandomNumber(Utils.RANDOM_NUMBER_MIN_RANGE, Utils.RANDOM_NUMBER_MAX_RANGE);
+            question[0] = Integer.toString(number);
+            question[1] = number % 2 == 0 ? "yes" : "no";
         }
-        if (Utils.getCounter() == Utils.STEPS_TO_WIN) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Engine.runGame(questions, DESCRIPTION);
+
     }
 }
