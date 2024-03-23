@@ -1,15 +1,10 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
-
 import hexlet.code.games.Even;
-
 import hexlet.code.games.GreatestCommonDivisor;
-
 import hexlet.code.games.Prime;
-
 import hexlet.code.games.Progression;
-
 import java.util.Scanner;
 
 public class App {
@@ -55,7 +50,7 @@ public class App {
             case EXIT:
                 break;
             default:
-                System.out.println("Wrong symbol");
+                System.out.println("Unknown user choice" + number);
                 break;
         }
     }
