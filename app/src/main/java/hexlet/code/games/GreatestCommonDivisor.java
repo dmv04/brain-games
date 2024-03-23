@@ -14,8 +14,19 @@ public class GreatestCommonDivisor {
             int randomNumber2 =
                     Utils.generateRandomNumber(Utils.RANDOM_NUMBER_MIN_RANGE, Utils.RANDOM_NUMBER_MAX_RANGE);
             question[0] = randomNumber1 + " " + randomNumber2;
-            question[1] = String.valueOf(Utils.findGCD(randomNumber1, randomNumber2));
+            question[1] = String.valueOf(findGCD(randomNumber1, randomNumber2));
         }
         Engine.runGame(questions, DESCRIPTION);
+    }
+
+    public static int findGCD(int a, int b) {
+        while (a != b) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a;
     }
 }
