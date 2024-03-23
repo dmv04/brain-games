@@ -24,14 +24,13 @@ public class Engine {
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + question[1] + "'");
-                break;
+                System.out.println("Let's try again, " + userName + "!");
+                return;
             }
         }
 
         if (correctAnswers == STEPS_TO_WIN) {
             System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Let's try again, " + userName + "!");
         }
     }
 
