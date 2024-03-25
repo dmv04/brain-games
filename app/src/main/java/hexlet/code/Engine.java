@@ -12,15 +12,12 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(description);
-
-        int correctAnswers = 0;
         for (String[] question : questions) {
             System.out.println("Question: " + question[0]);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
             if (userAnswer.equals(question[1])) {
                 System.out.println("Correct!");
-                correctAnswers++;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + question[1] + "'");
@@ -28,10 +25,6 @@ public class Engine {
                 return;
             }
         }
-
-        if (correctAnswers == STEPS_TO_WIN) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        System.out.println("Congratulations, " + userName + "!");
     }
-
 }

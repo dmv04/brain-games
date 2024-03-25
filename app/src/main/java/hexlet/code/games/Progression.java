@@ -5,34 +5,32 @@ import hexlet.code.Engine;
 
 public class Progression {
     private static final String DESCRIPTION = "What number is missing in the progression?";
+    private static final int FIRST_ELEMENT_MAX_RANGE = 9;
+    private static final int FIRST_ELEMENT_MIN_RANGE = 0;
+    private static final int PROGRESSION_STEP_MAX_RANGE = 10;
+    private static final int PROGRESSION_STEP_MIN_RANGE = 1;
+    private static final int PROGRESSION_LENGTH_MAX_RANGE = 15;
+    private static final int PROGRESSION_LENGTH_MIN_RANGE = 5;
 
     public static void game() {
         String[][] questions = new String[Engine.STEPS_TO_WIN][2];
         for (String[] question : questions) {
-            String[] currentProgression = createProgression();
+            int progressionLength = Utils.generateRandomNumber(PROGRESSION_LENGTH_MIN_RANGE, PROGRESSION_LENGTH_MAX_RANGE);
+            int firstProgressionElement = Utils.generateRandomNumber(FIRST_ELEMENT_MIN_RANGE, FIRST_ELEMENT_MAX_RANGE);
+            int progressionStep = Utils.generateRandomNumber(PROGRESSION_STEP_MIN_RANGE, PROGRESSION_STEP_MAX_RANGE);
+            String[] currentProgression = makeProgression(firstProgressionElement, progressionStep, progressionLength);
             int hiddenElementPosition = Utils.generateRandomNumber(0, currentProgression.length);
             question[1] = currentProgression[hiddenElementPosition];
             currentProgression[hiddenElementPosition] = "..";
-            question[0] = printArray(currentProgression);
-        }
-        Engine.runGame(questions, DESCRIPTION);
+            question[0] = String.join(" ", currentProgression);
+        } Engine.runGame(questions, DESCRIPTION);
     }
 
-    public static String[] createProgression() {
-        String[] progression = new String[Utils.MAX_PROGRESSION_VALUE];
-        progression[0] = String.valueOf((int) (Math.random() * Utils.FIRST_ELEMENT_RANGE));
-        int progressionStep = (int) (Math.random() * (Utils.MAX_PROGRESSION_VALUE - 1) + 1);
-        for (int i = 1; i < progression.length; i++) {
-            progression[i] = String.valueOf(Integer.parseInt(progression[i - 1]) + progressionStep);
+    public static String[] makeProgression(int first, int step, int length) {
+        String[] progression = new String[length];
+        for (int i = 0; i < length; i += 1) {
+            progression[i] = Integer.toString(first + i * step);
         }
         return progression;
-    }
-
-    public static String printArray(String[] progression) {
-        StringBuilder result = new StringBuilder();
-        for (String number : progression) {
-            result.append(number).append(" ");
-        }
-        return result.toString();
     }
 }

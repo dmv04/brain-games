@@ -5,41 +5,22 @@ import hexlet.code.Utils;
 
 
 public class Calc {
+    private static final int RANDOM_NUMBER_MIN_RANGE = 1;
+    private static final int RANDOM_NUMBER_MAX_RANGE = 20;
+    private static final char[] OPERATORS = {'+', '-', '*'};
     private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void game() {
+        int indexOperator = Utils.generateRandomNumber(0, OPERATORS.length - 1);
+        char operator = OPERATORS[indexOperator];
         String[][] questions = new String[Engine.STEPS_TO_WIN][2];
         for (String[] question : questions) {
-            int randomNumber1 = Utils.generateRandomNumber(0, Utils.RANDOM_NUMBER_MAX_RANGE);
-            int randomNumber2 = Utils.generateRandomNumber(0, Utils.RANDOM_NUMBER_MAX_RANGE);
-            String[] randomData = generateData(randomNumber1, randomNumber2);
-            question[0] = randomData[0];
-            question[1] = randomData[1];
+            int number1 = Utils.generateRandomNumber(RANDOM_NUMBER_MIN_RANGE, RANDOM_NUMBER_MAX_RANGE);
+            int number2 = Utils.generateRandomNumber(RANDOM_NUMBER_MIN_RANGE, RANDOM_NUMBER_MAX_RANGE);
+            question[0] = number1 + " " + operator + " " + number2;
+            question[1] = Integer.toString(calculate(operator, number1, number2));
         }
         Engine.runGame(questions, DESCRIPTION);
-    }
-
-    public static String[] generateData(int number1, int number2) {
-        int number = Utils.generateRandomNumber(0, 2);
-        String question = "";
-        String answer = "";
-        switch (number) {
-            case 0:
-                question = number1 + " + " + number2;
-                answer = Integer.toString(calculate('+', number1, number2));
-                break;
-            case 1:
-                question = number1 + " - " + number2;
-                answer = Integer.toString(calculate('-', number1, number2));
-                break;
-            case 2:
-                question = number1 + " * " + number2;
-                answer = Integer.toString(calculate('*', number1, number2));
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + number);
-        }
-        return new String[]{question, answer};
     }
 
     public static int calculate(char operator, int number1, int number2) {
