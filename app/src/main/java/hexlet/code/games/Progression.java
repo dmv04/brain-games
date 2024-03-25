@@ -15,7 +15,8 @@ public class Progression {
     public static void game() {
         String[][] questions = new String[Engine.STEPS_TO_WIN][2];
         for (String[] question : questions) {
-            int progressionLength = Utils.generateRandomNumber(PROGRESSION_LENGTH_MIN_RANGE, PROGRESSION_LENGTH_MAX_RANGE);
+            int progressionLength =
+                    Utils.generateRandomNumber(PROGRESSION_LENGTH_MIN_RANGE, PROGRESSION_LENGTH_MAX_RANGE);
             int firstProgressionElement = Utils.generateRandomNumber(FIRST_ELEMENT_MIN_RANGE, FIRST_ELEMENT_MAX_RANGE);
             int progressionStep = Utils.generateRandomNumber(PROGRESSION_STEP_MIN_RANGE, PROGRESSION_STEP_MAX_RANGE);
             String[] currentProgression = makeProgression(firstProgressionElement, progressionStep, progressionLength);
