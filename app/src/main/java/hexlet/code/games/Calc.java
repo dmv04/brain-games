@@ -28,8 +28,10 @@ public class Calc {
             return number1 + number2;
         } else if (operator == '-') {
             return number1 - number2;
-        } else {
+        } else if (operator == '*') {
             return number1 * number2;
+        } else {
+            throw new RuntimeException("Unknown operator: " + operator);
         }
     }
 }
