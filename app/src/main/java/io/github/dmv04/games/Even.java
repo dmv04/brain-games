@@ -1,7 +1,7 @@
-package hexlet.code.games;
+package io.github.dmv04.games;
 
-import hexlet.code.Utils;
-import hexlet.code.Engine;
+import io.github.dmv04.Engine;
+import io.github.dmv04.Utils;
 
 
 public class Even {

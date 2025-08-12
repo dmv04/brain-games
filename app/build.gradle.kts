@@ -8,7 +8,7 @@ version = "1.0-SNAPSHOT"
 
 
 application {
-    mainClass = "hexlet.code.App"
+    mainClass = "io.github.dmv04.App"
 }
 
 repositories {

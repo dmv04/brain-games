@@ -1,11 +1,12 @@
-package hexlet.code;
+package io.github.dmv04;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GreatestCommonDivisor;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
 import java.util.Scanner;
+
+import io.github.dmv04.games.Calc;
+import io.github.dmv04.games.Even;
+import io.github.dmv04.games.GreatestCommonDivisor;
+import io.github.dmv04.games.Prime;
+import io.github.dmv04.games.Progression;
 
 public class App {
     private static final int CLI = 1;
@@ -17,6 +18,7 @@ public class App {
     private static final int EXIT = 0;
 
     public static void main(String[] args) {
+
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -26,8 +28,10 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
+
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
+
         switch (number) {
             case CLI:
                 Cli.nameSetter();
@@ -53,5 +57,7 @@ public class App {
                 System.out.println("Unknown user choice" + number);
                 break;
         }
+
+        scanner.close();
     }
 }
